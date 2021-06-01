@@ -1,0 +1,322 @@
+@font-face
+{
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.ttf") format("TrueType");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Italic.ttf") format("TrueType");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face
+{
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.ttf") format("TrueType");
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*GENERAL RULES*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    --c1:#EFCA08;
+    --c2:#00A6A6;
+    --bgmob:#BBDEF0;
+    --txt1:black;
+    height: 100vh;
+    font-size: 16px;
+    color: var(--txt1);
+    font-family: "Roboto";
+    
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+    outline-style: none;
+}
+
+li 
+{
+    list-style: none;
+}
+
+main
+{
+    overflow-y: auto;
+}
+
+#bgvid
+{
+    position: fixed;
+    z-index: -100;
+    width: 100vw;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+}
+
+@media (min-aspect-ratio: 16/9) 
+{
+    #bgvid 
+    {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) 
+{
+    #bgvid 
+    {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.main-container
+{
+    padding-top:100px;
+    height:93vh;
+}
+
+.user-entry
+{
+    display: flex;
+    flex-flow: row wrap;
+    width: 25vw;
+    min-width: 300px;
+    background-color: var(--c1);
+    border-radius: 10px;
+    margin: 0 auto 0 auto;
+    padding: 2rem;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.user-entry label
+{
+    flex-basis: 100%;
+    margin: 1rem 0 .2rem 0;
+}
+
+.user-entry input
+{
+    display: block;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style:solid;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.user-entry textarea
+{
+    flex-basis: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.user-entry > div
+{
+    margin: 1rem auto 1rem auto;
+}
+
+#generate
+{
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    align-items: center;
+    margin: 10% auto 5% auto;
+    padding: 10px 18px 10px 18px;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+#generate:hover
+{
+    cursor: pointer;
+    color: var(--c1);
+    background-color: white;
+}
+
+#error
+{
+    color: #ff0000;
+}
+
+#entryHolder
+{
+    display: none;
+    flex-flow: row wrap;
+    width: 33vw;
+    min-width: 335px;
+    margin: 0 auto 8rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff3d;
+}
+
+#city-name
+{
+    flex-basis: 100%;
+    font-size: 2rem;
+}
+
+#date
+{
+    font-size: 1.5rem;
+}
+
+#temp
+{
+    flex-basis: 100%;
+    font-size: 5rem;
+    margin: 1.2rem auto 1.2rem auto;
+}
+
+#weather
+{
+    margin: 0 auto 0 1.2rem;
+    font-size: 1.5rem;
+    flex-basis: 100%;
+}
+
+#icon
+{
+    flex-basis: 100%;
+}
+
+#icon img
+{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 0 auto;
+    display: block;
+}
+
+#userResponse
+{
+    flex-basis: 100%;
+    font-size: 1rem;
+    text-align: center;
+    margin: 1.2rem 0 1.2rem 0;
+}
+
+#bot-anchor
+{
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    align-items: center;
+    margin: 10% auto 5% auto;
+    padding: 10px 18px 10px 18px;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+#bot-anchor:hover
+{
+    cursor: pointer;
+    color: var(--c2);
+    background-color: white;
+}
+
+@media screen and (min-width:768px) and (max-width:900px)
+{
+    html
+    {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:767px)
+{
+    html
+    {
+        font-size: 14px;
+    }
+
+    body 
+    {
+        background-color: var(--bgmob);
+    }
+
+    #bgvid 
+    {
+        display: none;
+    }
+
+    .main-container 
+    {
+        padding-top: 2rem;
+    }
+
+    #entryHolder
+    {
+        margin: 0 auto 2rem auto;
+        background-color: var(--c2);
+    }
+
+    #city-name
+    {
+        font-size: 1.5rem;
+    }
+    
+    #date
+    {
+        font-size: 1rem;
+    }
+    
+    #temp
+    {
+        font-size: 4rem;
+        margin: 1rem auto 1rem auto;
+    }
+    
+    #weather
+    {
+        margin: 0 auto 0 1rem;
+    }
+
+    #userResponse
+    {
+        margin: 1rem 0 1rem 0;
+    }
+
+    #icon img
+    {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-height:639px)
+{
+    .main-container
+    {
+        height:100vw;
+    }
+}
