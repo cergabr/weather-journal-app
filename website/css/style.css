@@ -70,7 +70,7 @@ main
     -moz-filter: blur(7px);
 }
 
-@media (min-aspect-ratio: 16/9) 
+@media screen and (min-aspect-ratio: 16/9) 
 {
     #bgvid 
     {
@@ -79,7 +79,7 @@ main
     }
 }
 
-@media (max-aspect-ratio: 16/9) 
+@media screen and (max-aspect-ratio: 16/9) 
 {
     #bgvid 
     {
@@ -313,7 +313,7 @@ main
     }
 }
 
-@media screen and (max-height:639px)
+@media screen and (max-height:400px)
 {
     .main-container
     {
